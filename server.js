@@ -12,12 +12,6 @@ var app = express();
 app.use(bodyParser.json()); // to support JSON bodies
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-let db = new sqlite3.Database('./db/manufacturingData.db', (err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log('Connected to the manufacturingData database.');
-  });
 
 // ================================================================
 // setup our express application

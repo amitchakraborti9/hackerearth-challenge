@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Fabrication Personnel Dashboard</h1>
+        <p>John Doe</p>
+        <p>JohnDoe@xyz.com</p>
+      </header>
+<br>
+      <!-- <p>Click on the "Choose File" button to upload a file:</p> -->
+<form action="/dashboard/fabrication" method="post">
+  <label for="item_id">Item Id</label>
+  <input type="number" name="item_id" id="item_id" required>
+  <label for="item">Item Name</label>
+  <input type="text" name="item" id="item" required>
+  <label for="raw_material">Raw Material</label>
+  <input type="text" name="raw_material" id="raw_material" required>
+  <label for="quantity">Quantity</label>
+  <input type="number" name="quantity" id="quantity" required>
+  <label for="quantity_unit">Specify unit for quantity</label>
+  <input type="text" name="quantity_unit" id="quantity_unit">
+  <button type="submit">Submit</button>
+</form>
+<br>
+      
+
+<br><br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-4erg{border-color:inherit;font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-za14{border-color:inherit;text-align:left;vertical-align:bottom}
+</style>
+<p>Summary</p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Item Id</th>
+    <th class="tg-7btt">Item</th>
+    <th class="tg-7btt">Raw Material</th>
+    <th class="tg-4erg">Quantity</th>
+    <th class="tg-fymr">In date</th>
+    <th class="tg-fymr">Out date</th>
+  </tr>
+</thead>
+<tbody>
+  <% rows.forEach((row)=>{ %>
+    <tr>
+    <td class="tg-za14"><%= row.item_id %></td>
+    <td class="tg-za14"><%= row.item %></td>
+    <td class="tg-za14"><%= row.raw_material %></td>
+    <td class="tg-za14"><%= row.quantity %> &emsp; <%= row.quantity_unit %></td>
+    </tr>
+  <%  }) %>
+  <!-- <tr>
+    <td class="tg-za14">tub</td>
+    <td class="tg-za14">sheet steel</td>
+    <td class="tg-za14">10 sqft</td>
+    <td class="tg-za14">14/02/2020</td>
+    <td class="tg-za14">21/02/2020</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">pump</td>
+    <td class="tg-za14">T102</td>
+    <td class="tg-za14">plastics</td>
+    <td class="tg-za14">10 kg</td>
+    <td class="tg-za14">16/02/2020</td>
+    <td class="tg-za14">20/02/2020</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">spin tub</td>
+    <td class="tg-za14">T103</td>
+    <td class="tg-za14">stainless steel</td>
+    <td class="tg-za14">5 kg/m3</td>
+    <td class="tg-za14">27/02/2020</td>
+    <td class="tg-za14">5-3-2020</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">wash tub</td>
+    <td class="tg-za14">T104</td>
+    <td class="tg-za14">(enameling iron) Porcelain coating</td>
+    <td class="tg-za14">24 gauge</td>
+    <td class="tg-za14">27/02/2020</td>
+    <td class="tg-za14">3-2-2020</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">balance ring</td>
+    <td class="tg-za14">T105</td>
+    <td class="tg-za14">plastics</td>
+    <td class="tg-za14">3 kg </td>
+    <td class="tg-za14">16/03/2020</td>
+    <td class="tg-za14">21/03/2020</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr> -->
+</tbody>
+</table>
+ 
+</body>
+</html>

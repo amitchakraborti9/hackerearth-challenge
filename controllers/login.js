@@ -4,6 +4,7 @@ exports.getHomepage=(req,res,next)=> {
 
 exports.postRole=(req,res,next)=> {
     const role=req.body.role;
+    console.log(role);
     if(role=="Admin Personnel") {
         res.redirect('/dashboard/admin');
     } else if(role=="Fabrication Personnel") {
